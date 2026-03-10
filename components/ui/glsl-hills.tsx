@@ -8,6 +8,9 @@ const GLSLHills = ({ width = '100vw', height = '100vh', cameraZ = 125, planeSize
   useEffect(() => {
     // Plane class
     class Plane {
+      uniforms: any;
+      mesh: any;
+      time: any;
       constructor() {
         this.uniforms = {
           time: { type: 'f', value: 0 },
