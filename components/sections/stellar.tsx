@@ -1,43 +1,61 @@
 "use client";
-export function StellarSection() {
-  const logos = ["Stellar", "Vibrant", "Bitso", "Coins.ph", "Bitnovo"];
 
+const firstRow = ["Stellar", "Vibrant", "Bitso", "Coins.ph", "Bitnovo", "MoneyGram", "Circle"];
+const secondRow = ["Anchorage", "Wyre", "Cowrie", "StellarX", "Lobstr", "Ultra Stellar", "Tempo"];
+
+function LogoItem({ name }: { name: string }) {
   return (
-    <section className="bg-[#0A0A12] py-20 px-6 border-y border-white/5">
-      <div className="max-w-4xl mx-auto text-center">
-        <p className="text-gray-500 text-sm uppercase tracking-widest mb-3">Powered by</p>
-        <h2 className="text-3xl font-bold text-white mb-12">
+    <div className="flex items-center gap-3 px-6 py-3 rounded-xl border border-white/10 bg-white/5 text-gray-400 font-semibold text-sm whitespace-nowrap select-none hover:border-[#06B6D4]/30 hover:text-white transition-colors">
+      <div className="w-5 h-5 rounded-full bg-[#06B6D4]/20 flex items-center justify-center flex-shrink-0">
+        <div className="w-1.5 h-1.5 rounded-full bg-[#06B6D4]" />
+      </div>
+      {name}
+    </div>
+  );
+}
+
+function MarqueeRow({ items, reverse = false }: { items: string[]; reverse?: boolean }) {
+  const repeated = [...items, ...items, ...items];
+  return (
+    <div className="relative overflow-hidden py-2">
+      <div className="absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-[#000000] to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-[#000000] to-transparent z-10 pointer-events-none" />
+      <div
+        className="flex gap-4 w-max"
+        style={{
+          animation: `marquee${reverse ? "Reverse" : ""} 40s linear infinite`,
+        }}
+      >
+        {repeated.map((name, i) => (
+          <LogoItem key={i} name={name} />
+        ))}
+      </div>
+      <style>{`
+        @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-33.333%); } }
+        @keyframes marqueeReverse { from { transform: translateX(-33.333%); } to { transform: translateX(0); } }
+      `}</style>
+    </div>
+  );
+}
+
+export function StellarSection() {
+  return (
+    <section className="bg-[#000000] py-20 px-6 border-y border-white/5 overflow-hidden">
+      <div className="max-w-4xl mx-auto text-center mb-12">
+        <p className="text-gray-500 text-sm uppercase tracking-widest mb-3">Trusted by</p>
+        <h2 className="text-3xl font-bold text-white">
           The Stellar Ecosystem
         </h2>
-
-        <div className="relative overflow-hidden py-4">
-          <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-[#0A0A12] to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-[#0A0A12] to-transparent z-10 pointer-events-none" />
-
-          <div className="flex gap-16 items-center w-max"
-            style={{ animation: "marquee 30s linear infinite" }}>
-            {[...logos, ...logos, ...logos].map((name, i) => (
-              <div key={i} className="flex items-center gap-2 text-gray-400 font-semibold text-lg whitespace-nowrap select-none">
-                <div className="w-6 h-6 rounded-full bg-[#06B6D4]/20 flex items-center justify-center">
-                  <div className="w-2 h-2 rounded-full bg-[#06B6D4]" />
-                </div>
-                {name}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <p className="text-gray-600 text-sm mt-8">
-          Built to the SEP-12 standard · Protocol 25 ready · GDPR compliant
-        </p>
       </div>
 
-      <style>{`
-        @keyframes marquee {
-          from { transform: translateX(0); }
-          to { transform: translateX(-33.333%); }
-        }
-      `}</style>
+      <div className="flex flex-col gap-4">
+        <MarqueeRow items={firstRow} />
+        <MarqueeRow items={secondRow} reverse />
+      </div>
+
+      <p className="text-gray-600 text-sm text-center mt-12">
+        Built to the SEP-12 standard · Protocol 25 ready · GDPR compliant
+      </p>
     </section>
   );
 }

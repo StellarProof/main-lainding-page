@@ -6,24 +6,31 @@ export function WaitlistSection() {
   const [isAnchor, setIsAnchor] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (email) setSubmitted(true);
   };
 
   return (
-    <section id="waitlist" className="bg-[#0A0A12] py-32 px-6">
-      <div className="max-w-2xl mx-auto text-center">
-        <div className="mb-6 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#06B6D4]/30 bg-[#06B6D4]/10">
-          <span className="text-[#06B6D4] text-sm font-medium">Early Access</span>
-        </div>
+    <section
+      id="waitlist"
+      className="relative bg-[#000000] py-32 px-6 overflow-hidden"
+    >
+      {/* Radial gradient background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(6,182,212,0.08),transparent)]" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#06B6D4]/20 to-transparent" />
+      </div>
+
+      <div className="relative z-10 max-w-2xl mx-auto text-center">
+        
 
         <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
-          Join the Waitlist
+          Join Waitlist
         </h2>
         <p className="text-gray-400 text-lg mb-10 leading-relaxed">
           Be the first anchor to go live.<br />
-          Early partners get 3 months free on any plan.
+          Early Anchors get a suprise when we launch 😉
         </p>
 
         {submitted ? (
@@ -49,27 +56,25 @@ export function WaitlistSection() {
                 }`}
               >
                 {isAnchor && (
-                  <svg className="w-3 h-3 text-[#0A0A12]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <svg className="w-3 h-3 text-[#000000]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                 )}
               </div>
               <span className="text-gray-400 text-sm">
-                I represent a Stellar anchor and want to apply for the pilot program
+                I represent a Stellar anchor and want to integrate StellarProof for my customers.
               </span>
             </label>
             <button
               type="submit"
-              className="w-full py-4 bg-[#06B6D4] text-[#0A0A12] font-bold text-lg rounded-xl hover:bg-[#06B6D4]/90 transition-colors"
+              className="w-full py-4 bg-[#06B6D4] text-[#000000] font-bold text-lg rounded-xl hover:bg-[#06B6D4]/90 transition-colors"
             >
               Get Early Access →
             </button>
           </form>
         )}
 
-        <p className="text-gray-600 text-sm mt-6">
-          No spam. Unsubscribe anytime.
-        </p>
+        <p className="text-gray-600 text-sm mt-6">Unsubscribe anytime.</p>
       </div>
     </section>
   );

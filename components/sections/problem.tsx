@@ -3,13 +3,11 @@ import { MagicText } from "@/components/ui/magic-text";
 
 export function ProblemSection() {
   return (
-    <section className="bg-[#0A0A12] py-32 px-6">
+    <section className="py-32 px-6" style={{ backgroundColor: '#0a0a0a' }}>
       <div className="max-w-5xl mx-auto">
-        <div className="mb-10 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-red-500/30 bg-red-500/10">
-          <span className="text-red-400 text-sm font-medium">The Problem</span>
-        </div>
-
+        
         <MagicText text="Maria finds three Stellar apps. She uploads her passport. Her ID. Her selfie. Waits. Approved. Then she does it again. And again. Same person. Same passport. Same face. Three times. 60 to 80 percent of users never make it through even once. Every anchor is an island. None know she already proved who she is." />
+  
 
         <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-white/10 pt-12">
           <div className="text-center">

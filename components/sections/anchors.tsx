@@ -3,7 +3,7 @@ import { CardSpotlight } from "@/components/ui/card-spotlight";
 
 export function AnchorsSection() {
   return (
-    <section id="anchors" className="bg-[#0A0A12] py-24 px-6">
+    <section id="anchors" className="bg-[#000000] py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#06B6D4]/30 bg-[#06B6D4]/10">
@@ -50,7 +50,7 @@ export function AnchorsSection() {
                 ["Returning user", "$0.10 reuse fee"],
                 ["Drop-off rate", "<5%"],
                 ["1,000 users/month", "$430 + $299 plan"],
-                ["Integration", "npm install @stellarproof/sdk"],
+                ["Integration", "@stellarproof/sdk"],
               ].map(([label, value]) => (
                 <div key={label} className="flex items-center justify-between border-b border-white/5 pb-4">
                   <span className="text-gray-400 text-sm">{label}</span>
@@ -67,20 +67,7 @@ export function AnchorsSection() {
           <div className="text-gray-400 text-sm">Payback period: less than 2 weeks</div>
         </div>
 
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
-          {[
-            { tier: "Starter", price: "$299", users: "1,000 users" },
-            { tier: "Growth", price: "$799", users: "10,000 users" },
-            { tier: "Scale", price: "$1,999", users: "50,000 users" },
-            { tier: "NGO", price: "$49", users: "Unlimited" },
-          ].map((plan) => (
-            <div key={plan.tier} className="rounded-xl border border-white/10 bg-white/5 p-5 text-center">
-              <div className="text-gray-400 text-xs uppercase tracking-widest mb-2">{plan.tier}</div>
-              <div className="text-white text-2xl font-bold mb-1">{plan.price}</div>
-              <div className="text-gray-500 text-xs">{plan.users}</div>
-            </div>
-          ))}
-        </div>
+        
       </div>
     </section>
   );

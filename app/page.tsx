@@ -9,7 +9,7 @@ import { FooterSection } from "@/components/sections/footer";
 
 export default function Home() {
   return (
-    <main className="bg-[#0A0A12]">
+    <main className="bg-black">
       <HeroSection />
       <ProblemSection />
       <HowItWorksSection />
