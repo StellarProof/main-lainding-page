@@ -14,7 +14,7 @@ export function WaitlistSection() {
   return (
     <section
       id="waitlist"
-      className="relative bg-[#000000] py-32 px-6 overflow-hidden"
+      className="relative bg-[#0a0a0a] py-32 px-6 overflow-hidden"
     >
       {/* Radial gradient background */}
       <div className="absolute inset-0 pointer-events-none">

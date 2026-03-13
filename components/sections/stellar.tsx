@@ -6,8 +6,8 @@ const secondRow = ["Anchorage", "Wyre", "Cowrie", "StellarX", "Lobstr", "Ultra S
 function LogoItem({ name }: { name: string }) {
   return (
     <div className="flex items-center gap-3 px-6 py-3 rounded-xl border border-white/10 bg-white/5 text-gray-400 font-semibold text-sm whitespace-nowrap select-none hover:border-[#06B6D4]/30 hover:text-white transition-colors">
-      <div className="w-5 h-5 rounded-full bg-[#06B6D4]/20 flex items-center justify-center flex-shrink-0">
-        <div className="w-1.5 h-1.5 rounded-full bg-[#06B6D4]" />
+      <div className="w-5 h-5 rounded-full bg-[#171716]/20 flex items-center justify-center flex-shrink-0">
+        <div className="w-1.5 h-1.5 rounded-full bg-[#171716]" />
       </div>
       {name}
     </div>
@@ -40,7 +40,7 @@ function MarqueeRow({ items, reverse = false }: { items: string[]; reverse?: boo
 
 export function StellarSection() {
   return (
-    <section className="bg-[#000000] py-20 px-6 border-y border-white/5 overflow-hidden">
+    <section className="bg-[#0a0a0a] py-20 px-6 border-y border-white/5 overflow-hidden">
       <div className="max-w-4xl mx-auto text-center mb-12">
         <p className="text-gray-500 text-sm uppercase tracking-widest mb-3">Trusted by</p>
         <h2 className="text-3xl font-bold text-white">

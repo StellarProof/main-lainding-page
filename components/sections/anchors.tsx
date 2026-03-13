@@ -3,7 +3,7 @@ import { CardSpotlight } from "@/components/ui/card-spotlight";
 
 export function AnchorsSection() {
   return (
-    <section id="anchors" className="bg-[#000000] py-24 px-6">
+    <section id="anchors" className="bg-[#171716] py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#06B6D4]/30 bg-[#06B6D4]/10">

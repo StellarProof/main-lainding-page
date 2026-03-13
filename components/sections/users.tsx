@@ -11,7 +11,7 @@ const features = [
 
 export function UsersSection() {
   return (
-    <section className="bg-[#000000] w-full py-20 lg:py-40 px-6">
+    <section className="bg-[#171716] w-full py-20 lg:py-40 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="flex gap-4 py-10 flex-col items-start">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#06B6D4]/30 bg-[#06B6D4]/10">

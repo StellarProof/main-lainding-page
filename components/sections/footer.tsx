@@ -104,7 +104,7 @@ const footerLinks = [
 
 export function FooterSection() {
   return (
-    <footer className="w-full bg-[#000000] border-t border-white/5">
+    <footer className="w-full bg-[#0a0a0a] border-t border-white/5">
       {/* Links */}
       <div className="flex flex-col md:flex-row md:items-start md:justify-between p-6 md:p-10 gap-8 md:gap-10">
         <div className="flex flex-col items-start gap-5 max-w-xs">
