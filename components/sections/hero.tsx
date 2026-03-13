@@ -23,8 +23,6 @@ export function HeroSection() {
           --bg: #0a0a0a;
         }
 
-
-
         .halide-viewport {
           width: 100%;
           height: 100%;
@@ -69,66 +67,33 @@ export function HeroSection() {
           }
         }
 
- 
-
-        .halide-cta {
-          pointer-events: auto;
-          background: var(--accent);
-          color: #000;
-          padding: 1rem 2rem;
-          text-decoration: none;
-          font-weight: 700;
-          font-size: 0.8rem;
-          letter-spacing: 0.1em;
-          clip-path: polygon(0 0, 100% 0, 100% 70%, 88% 100%, 0 100%);
-          transition: 0.3s;
-          display: inline-block;
-        }
-        .halide-cta:hover { background: #fff; transform: translateY(-4px); }
-
-        .halide-cta-bottom {
-          position: absolute;
-          bottom: 2rem;
-          right: 2rem;
-          pointer-events: auto;
-          z-index: 20;
-        }
-
-        .halide-scroll-hint {
-          position: absolute;
-          bottom: 2rem;
-          left: 50%;
-          width: 1px; height: 60px;
-          background: linear-gradient(to bottom, #e0e0e0, transparent);
-          animation: halideFlow 2s infinite ease-in-out;
-          z-index: 20;
-        }
-
-        @keyframes halideFlow {
-          0%, 100% { transform: scaleY(0); transform-origin: top; }
-          50% { transform: scaleY(1); transform-origin: top; }
-          51% { transform: scaleY(1); transform-origin: bottom; }
-        }
       `}</style>
 
       <section className="halide-section">
         {/* Interface overlay */}
         <div className="halide-interface">
-          <div style={{ fontWeight: 700, fontSize: "0.75rem", letterSpacing: "0.12em" }}>
-            STELLARPROOF
-          </div>
+          <img
+            src="/StellarProof text logo.svg"
+            alt="StellarProof"
+            className="w-40 h-auto"
+          />
         </div>
 
         {/* Hero text content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none">
           <div className="space-y-6 text-center">
-            <h1 className="font-semibold text-6xl whitespace-pre-wrap">
-              <span className="italic text-6xl font-thin">Verify Once, Accepted at every anchor# <br/> </span>
-              Reuseable identity layer for stellar ecosystem
+            <h1 className="font-semibold text-5xl whitespace-pre-wrap" >
+              <span className="italic text-5xl font-thin">Verify Once, Accepted at every anchor# <br/> </span>
+              <span className="text-[#06B6D4]">Reuseable identity layer for Stellar ecosystem</span>
             </h1>
             <p className="text-sm text-primary/60">
-              We craft stunning visuals and user - friendly experiences that <br/> help your brand stand out and connect with your audience.
+                Building on Stellar ecosystem 
             </p>
+              <div className="flex flex-col sm:flex-row gap-4 items-center justify-center pt-2 pointer-events-auto">
+                <a href="#waitlist" className="px-8 py-4 bg-white/20 text-[#06B6D4] font-semibold rounded-lg text-lg hover:bg-white/30 transition-colors border border-white/30 backdrop-blur-sm">
+                  Join the Waitlist
+                </a>
+              </div>
           </div>
         </div>
 
@@ -139,11 +104,6 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* CTA Button */}
-        <a href="#waitlist" className="halide-cta halide-cta-bottom">JOIN WAITLIST</a>
-
-        {/* Scroll hint */}
-        <div className="halide-scroll-hint" />
       </section>
     </>
   );

@@ -25,10 +25,19 @@ export const MagicText: React.FC<{ text: string }> = ({ text }) => {
     target: container,
     offset: ["start 0.9", "start 0.25"],
   });
-  const words = text.split(" ");
+  const normalizedText = text.replace(/\\n/g, "\n");
+  const words = normalizedText.split(/(\n|\s)/);
   return (
-    <p ref={container} className="flex flex-wrap leading-[0.5] p-4">
+    <p ref={container} className="flex flex-wrap leading-[1.4] p-4">
       {words.map((word, i) => {
+        if (word === "\n") {
+          return <span key={i} className="basis-full h-3" aria-hidden="true" />;
+        }
+
+        if (word.trim() === "") {
+          return " ";
+        }
+
         const start = i / words.length;
         const end = start + 1 / words.length;
         return (

@@ -3,15 +3,27 @@ import { MagicText } from "@/components/ui/magic-text";
 
 export function ProblemSection() {
   return (
-    <section className="relative py-32 px-6" style={{ backgroundColor: '#171716' }}>
-      <p className="top-1/2 left-1/2 w-fit mx-auto -translate-y-1/2 text-white/40 text-4xl font-bold text-center pointer-events-none z-10">
-        Problem 
-      </p>
-      <div className="max-w-5xl mx-auto">
+    <section className="relative py-16 px-6" style={{ backgroundColor: '#171716' }}>
+      <div className="max-w-6xl mx-auto">
+        <p className="px-4 text-[#06B6D4] text-4xl font-bold text-center pointer-events-none z-10 mb-8">
+          Problem
+        </p>
         
-        <MagicText text="Maria finds three Stellar apps. She uploads her passport. Her ID. Her selfie. Waits. Approved. Then she does it again. And again. Same person. Same passport. Same face. Three times. 60 to 80 percent of users never make it through even once. Every anchor is an island. None know she already proved who she is." />
+        <MagicText
+          text={`Maria lives in the Philippines. She sends money to her family every month.
+      She finds three Stellar apps that offer better rates than Western Union and she picks up her phone and starts with the first one.
+
+      Coins.ph: Upload passport. Upload ID card. Upload selfie. Wait. Approved. Finally.
+      Vibrant: Upload passport. Upload ID card. Upload selfie. Wait. Approved. Again.
+      Bitso: Upload passport. Upload ID card. Upload selfie. Wait. Approved. Third time.
+
+      Same person. Same passport. Same face. Three times.
+      Maria did everything right. She is patient and determined.
+      But users like her never make it through even once.
+      They see the form, close the app, and never come back.`}
+        />
        
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 pt-12 pb-12 border-b border-white/10">
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-26 pt-12 pb-8 border-b border-white/10">
           <div className="text-center">
             <div className="text-4xl font-bold text-red-400 mb-2">60–80%</div>
             <div className="text-gray-400 text-sm">of users drop off during KYC</div>

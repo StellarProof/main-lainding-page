@@ -98,19 +98,21 @@ function Card({ title, description, Icon, effect }: (typeof cards)[0]) {
 
 export function HowItWorksSection() {
   return (
-    <section className="bg-[#171716] py-24 px-6">
+    <section className="bg-[#171716] py-16 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#06B6D4]/30 bg-[#06B6D4]/10">
-            <span className="text-[#06B6D4] text-sm font-medium">How It Works</span>
+          <div className="max-w-6xl mx-auto">
+            {/* <span className="text-[#06B6D4] text-sm font-medium">How It Works</span> */}
+            <p className="px-4 text-[#06B6D4] text-4xl font-bold text-center pointer-events-none z-10 mb-8">
+              How It Works
+            </p>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            One verification.<br />
-            <span className="text-[#06B6D4]">Infinite anchors.</span>
+          <h2 className="text-4xl md:text-3xl font-bold text-white mb-4">
+            Verify once reuse everywhere in Stellar ecosystem.
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            StellarProof creates a reusable credential tied to your Stellar wallet.
-            Anchors verify the credential — not your documents again.
+            StellarProof creates a reusable credential tied to your Stellar wallet. <br/>
+            Anchors verify the credential, not your documents again.
           </p>
         </div>
 
@@ -119,6 +121,8 @@ export function HowItWorksSection() {
             <Card key={card.title} {...card} />
           ))}
         </div>
+
+        <div className="border-t border-white/10 mt-16" />
       </div>
     </section>
   );
