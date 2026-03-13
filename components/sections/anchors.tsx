@@ -9,7 +9,7 @@ export function AnchorsSection() {
           <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#06B6D4]/30 bg-[#06B6D4]/10">
             <span className="text-[#06B6D4] text-sm font-medium">For Anchors</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
             Cut KYC costs by{" "}
             <span className="text-[#06B6D4]">68%.</span>
           </h2>
@@ -61,8 +61,8 @@ export function AnchorsSection() {
           </CardSpotlight>
         </div>
 
-        <div className="text-center bg-[#06B6D4]/10 border border-[#06B6D4]/20 rounded-xl p-8">
-          <div className="text-5xl font-bold text-[#06B6D4] mb-2">$621</div>
+        <div className="text-center bg-[#06B6D4]/10 border border-[#06B6D4]/20 rounded-xl p-5 sm:p-8">
+          <div className="text-4xl sm:text-5xl font-bold text-[#06B6D4] mb-2">$621</div>
           <div className="text-white text-lg font-medium mb-1">saved per month at 1,000 users</div>
           <div className="text-gray-400 text-sm">Payback period: less than 2 weeks</div>
         </div>

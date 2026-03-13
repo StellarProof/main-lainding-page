@@ -14,7 +14,7 @@ export function WaitlistSection() {
   return (
     <section
       id="waitlist"
-      className="relative bg-[#0a0a0a] py-32 px-6 overflow-hidden"
+      className="relative bg-[#0a0a0a] py-16 md:py-32 px-4 sm:px-6 overflow-hidden"
     >
       {/* Radial gradient background */}
       <div className="absolute inset-0 pointer-events-none">
@@ -25,10 +25,10 @@ export function WaitlistSection() {
       <div className="relative z-10 max-w-2xl mx-auto text-center">
         
 
-        <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
+        <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
           Join Waitlist
         </h2>
-        <p className="text-gray-400 text-lg mb-10 leading-relaxed">
+          <p className="text-gray-400 text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed">
           Be the first anchor to go live.<br />
           Early Anchors get a suprise when we launch 😉
         </p>

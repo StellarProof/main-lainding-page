@@ -81,16 +81,16 @@ export function HeroSection() {
 
         {/* Hero text content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none">
-          <div className="space-y-6 text-center">
-            <h1 className="font-semibold text-5xl whitespace-pre-wrap" >
-              <span className="italic text-5xl font-thin">Verify Once, Accepted at every anchor# <br/> </span>
-              <span className="text-[#06B6D4]">Reuseable identity layer for Stellar ecosystem</span>
+          <div className="space-y-3 sm:space-y-6 text-center px-6 sm:px-8">
+            <h1 className="font-semibold">
+              <span className="italic text-[clamp(1.1rem,5vw,3rem)] font-thin block leading-snug">Verify Once,<br/>Accepted at every anchor</span>
+              <span className="text-[#06B6D4] text-[clamp(0.95rem,4.5vw,3rem)] block mt-1">Reuseable identity layer<br className="sm:hidden"/> for Stellar ecosystem</span>
             </h1>
-            <p className="text-sm text-primary/60">
+            <p className="text-xs sm:text-sm text-primary/60">
                 Building on Stellar ecosystem 
             </p>
               <div className="flex flex-col sm:flex-row gap-4 items-center justify-center pt-2 pointer-events-auto">
-                <a href="#waitlist" className="px-8 py-4 bg-white/20 text-[#06B6D4] font-semibold rounded-lg text-lg hover:bg-white/30 transition-colors border border-white/30 backdrop-blur-sm">
+                <a href="#waitlist" className="px-6 sm:px-8 py-3 sm:py-4 bg-white/20 text-[#06B6D4] font-semibold rounded-lg text-base sm:text-lg hover:bg-white/30 transition-colors border border-white/30 backdrop-blur-sm">
                   Join the Waitlist
                 </a>
               </div>

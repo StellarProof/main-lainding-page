@@ -102,15 +102,14 @@ export function HowItWorksSection() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <div className="max-w-6xl mx-auto">
-            {/* <span className="text-[#06B6D4] text-sm font-medium">How It Works</span> */}
-            <p className="px-4 text-[#06B6D4] text-4xl font-bold text-center pointer-events-none z-10 mb-8">
-              How It Works
+            <p className="px-4 text-[#06B6D4] text-2xl sm:text-4xl font-bold text-center pointer-events-none z-10 mb-8">
+              How it Works
             </p>
           </div>
-          <h2 className="text-4xl md:text-3xl font-bold text-white mb-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4">
             Verify once reuse everywhere in Stellar ecosystem.
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-400 text-sm sm:text-lg max-w-2xl mx-auto">
             StellarProof creates a reusable credential tied to your Stellar wallet. <br/>
             Anchors verify the credential, not your documents again.
           </p>
