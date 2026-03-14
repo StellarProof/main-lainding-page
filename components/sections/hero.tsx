@@ -73,7 +73,7 @@ export function HeroSection() {
         {/* Interface overlay */}
         <div className="halide-interface">
           <img
-            src="/StellarProof text logo.svg"
+            src="/stellarproof-logo.svg"
             alt="StellarProof"
             className="w-40 h-auto"
           />
