@@ -42,9 +42,9 @@ export function StellarSection() {
   return (
     <section className="bg-[#0a0a0a] py-20 px-6 border-y border-white/5 overflow-hidden">
       <div className="max-w-4xl mx-auto text-center mb-12">
-        <p className="text-gray-500 text-sm uppercase tracking-widest mb-3">Trusted by</p>
+        <p className="text-gray-500 text-sm uppercase tracking-widest mb-3">BUILT FOR</p>
         <h2 className="text-3xl font-bold text-white">
-          The Stellar Ecosystem
+          Stellar Ecosystem
         </h2>
       </div>
 

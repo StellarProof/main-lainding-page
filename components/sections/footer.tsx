@@ -145,7 +145,7 @@ export function FooterSection() {
 
       {/* Large flickering brand name */}
       <div className="relative w-full h-36 md:h-48 overflow-hidden">
-        <FlickeringText text="STELLARPROOF" />
+        <FlickeringText text="StellarProof" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#000000] via-transparent to-transparent pointer-events-none" />
         <div className="absolute bottom-3 left-0 right-0 text-center z-10">
           <p className="text-gray-700 text-xs">© 2026 StellarProof. All rights reserved.</p>
