@@ -53,6 +53,14 @@ export function HeroSection() {
           z-index: 10;
           pointer-events: none;
           font-family: 'Syncopate', 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+          align-items: start;
+          justify-items: stretch;
+        }
+
+        .halide-logo {
+          grid-column: 1;
+          grid-row: 1;
+          pointer-events: auto;
         }
 
         @media (min-width: 640px) {
@@ -72,11 +80,12 @@ export function HeroSection() {
       <section className="halide-section">
         {/* Interface overlay */}
         <div className="halide-interface">
-          <img
-            src="/stellarproof-logo.svg"
-            alt="StellarProof"
-            className="w-40 h-auto"
-          />
+          <div className="halide-logo">
+            <img
+              src="/stellarproof-logo.svg"
+              alt="StellarProof"
+              className="w-40 h-auto"/>
+          </div>
         </div>
 
         {/* Hero text content */}
@@ -91,7 +100,10 @@ export function HeroSection() {
             </p>
               <div className="flex flex-col sm:flex-row gap-4 items-center justify-center pt-2 pointer-events-auto">
                 <a href="#waitlist" className="px-6 sm:px-8 py-3 sm:py-4 bg-white/20 text-[#06B6D4] font-semibold rounded-lg text-base sm:text-lg hover:bg-white/30 transition-colors border border-white/30 backdrop-blur-sm">
-                  Join the Waitlist
+                  Join Waitlist
+                </a>
+                <a href="/about-us" className="px-6 sm:px-8 py-3 sm:py-4 bg-white/20 text-[#06B6D4] font-semibold rounded-lg text-base sm:text-lg hover:bg-white/30 transition-colors border border-white/30 backdrop-blur-sm">
+                  About us
                 </a>
               </div>
           </div>

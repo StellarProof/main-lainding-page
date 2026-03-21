@@ -77,7 +77,7 @@ const footerLinks = [
   {
     title: "Company",
     links: [
-      { title: "About", url: "#" },
+      { title: "About us", url: "/about-us" },
       { title: "Contact", url: "mailto:hello@stellarproof.org" },
       { title: "Blog", url: "#" },
       { title: "Story", url: "#" },
@@ -87,7 +87,7 @@ const footerLinks = [
     title: "Developers",
     links: [
       { title: "Docs", url: "#" },
-      { title: "GitHub", url: "https://github.com/stellarproof" },
+      { title: "GitHub", url: "https://github.com" },
       { title: "SDK", url: "#" },
       { title: "SEP-12", url: "https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0012.md" },
     ],
