@@ -78,26 +78,23 @@ const footerLinks = [
     title: "Company",
     links: [
       { title: "About us", url: "/about-us" },
-      { title: "Contact", url: "mailto:hello@stellarproof.org" },
       { title: "Blog", url: "#" },
-      { title: "Story", url: "#" },
+      { title: "GitHub", url: "https://github.com/StellarProof" },
     ],
   },
-  {
-    title: "Developers",
-    links: [
-      { title: "Docs", url: "#" },
-      { title: "GitHub", url: "https://github.com" },
-      { title: "SDK", url: "#" },
-      { title: "SEP-12", url: "https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0012.md" },
-    ],
-  },
+  // {
+  //   title: "Developers",
+  //   links: [
+  //     // { title: "SDK", url: "#" },
+      
+  //   ],
+  // },
   {
     title: "Connect",
     links: [
-      { title: "X @StellarProofOrg", url: "https://x.com/StellarProofOrg" },
-      { title: "hello@stellarproof.org", url: "mailto:hello@stellarproof.org" },
-      { title: "Stellar Discord", url: "https://discord.gg/stellardev" },
+      { title: "X (Twitter)", url: "https://x.com/StellarProofOrg" },
+      { title: "Gmail", url: "mailto:getstellarproof@gmail.com" },
+      { title: "Discord", url: "https://discord.gg/stellardev" },
     ],
   },
 ];
@@ -119,7 +116,7 @@ export function FooterSection() {
             Verify once. Accepted at every anchor.
           </p>
           <div className="flex items-center gap-2 flex-wrap">
-            {["GDPR Ready", "SEP-12", "Built on Stellar"].map((badge) => (
+            {[ "SEP-12", "Built on Stellar"].map((badge) => (
               <span key={badge} className="px-2.5 py-1 text-xs rounded-full border border-[#06B6D4]/30 text-[#06B6D4] bg-[#06B6D4]/10">
                 {badge}
               </span>

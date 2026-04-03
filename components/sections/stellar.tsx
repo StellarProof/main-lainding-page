@@ -53,9 +53,6 @@ export function StellarSection() {
         <MarqueeRow items={secondRow} reverse />
       </div>
 
-      <p className="text-gray-600 text-sm text-center mt-12">
-        Built to the SEP-12 standard · Protocol 25 ready · GDPR compliant
-      </p>
     </section>
   );
 }
