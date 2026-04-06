@@ -9,7 +9,6 @@ const BORDER = "#1E3A5F";
 const TEXT = "#E2E8F0";
 const MUTED = "#e4e2dd";
 const GREEN = "#10B981";
-const PURPLE = "#8B5CF6";
 
 const nav = [
   { id: "what", label: "What is StellarProof", icon: "" },

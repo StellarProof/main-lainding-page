@@ -1,43 +1,39 @@
 "use client";
-import { MagicText } from "@/components/ui/magic-text";
+import { Building2, User, Wallet } from "lucide-react";
 
 export function ProblemSection() {
   return (
-    <section className="relative py-16 px-6" style={{ backgroundColor: '#171716' }}>
+    <section className="relative px-6 py-16 bg-transparent">
       <div className="max-w-6xl mx-auto">
         <p className="px-4 text-[#06B6D4] text-2xl sm:text-4xl font-bold text-center pointer-events-none z-10 mb-8">
-          Problem
+          The Problem
         </p>
-        
-        <MagicText
-          text={`Maria lives in the Philippines. She sends money to her family every month.
-      She finds three Stellar apps that offer better rates than Western Union and she picks up her phone and starts with the first one.
 
-      Coins.ph: Upload passport. Upload ID card. Upload selfie. Wait. Approved. Finally.
-      Vibrant: Upload passport. Upload ID card. Upload selfie. Wait. Approved. Again.
-      Bitso: Upload passport. Upload ID card. Upload selfie. Wait. Approved. Third time.
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <article className="border border-white/20 bg-[#171716] p-8 sm:p-10">
+            <User className="h-16 w-16 text-white" strokeWidth={1.2} />
+            <h3 className="mt-8 text-3xl font-semibold text-white leading-tight">For Users</h3>
+            <p className="mt-6 text-2xl leading-relaxed text-zinc-300">
+              Users uses the same document every single time to verify a new Stellar Anchor. Most users drop before completing KYC that lead to 40–50% drop-off rate.
+            </p>
+          </article>
 
-      Same person. Same passport. Same face. Three times.
-      Maria did everything right. She is patient and determined.
-      But users like her never make it through even once.
-      They see the form, close the app, and never come back.`}
-        />
-       
-        <div className="mt-10 md:mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 pt-8 md:pt-12 pb-8 border-b border-white/10">
-          <div className="text-center">
-            <div className="text-3xl sm:text-4xl font-bold text-red-400 mb-2">60–80%</div>
-            <div className="text-gray-400 text-sm">of users drop off during KYC</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl sm:text-4xl font-bold text-red-400 mb-2">3×</div>
-            <div className="text-gray-400 text-sm">average re-verifications per user</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl sm:text-4xl font-bold text-red-400 mb-2">$1.35</div>
-            <div className="text-gray-400 text-sm">cost per verification — paid every time</div>
-          </div>
+          <article className="border border-white/20 bg-[#171716] p-8 sm:p-10">
+            <Building2 className="h-16 w-16 text-white" strokeWidth={1.2} />
+            <h3 className="mt-8 text-3xl font-semibold text-white leading-tight">For Anchors</h3>
+            <p className="mt-6 text-2xl leading-relaxed text-zinc-300">
+              Anchors cannot reuse verified identity from other providers, so they pay for the same KYC again and again, even when users abandon midway.
+            </p>
+          </article>
+
+          <article className="border border-white/20 bg-[#171716] p-8 sm:p-10">
+            <Wallet className="h-16 w-16 text-white" strokeWidth={1.2} />
+            <h3 className="mt-8 text-3xl font-semibold text-white leading-tight">For Ecosystem</h3>
+            <p className="mt-6 text-2xl leading-relaxed text-zinc-300">
+              Duplicate checks drain tens of millions of dollars yearly across every Stellar Anchor and waste time for users to reverify. The network is missing shared identity infrastructure.
+            </p>
+          </article>
         </div>
-        
       </div>
     </section>
   );
