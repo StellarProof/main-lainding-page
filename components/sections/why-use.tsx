@@ -12,7 +12,7 @@ export function WhyuseSection() {
             </p>
           </div>
           <p className="text-xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
-            For Anchor — Cut KYC costs by{" "}
+            For Anchor cut KYC costs by{" "}
             <span className="text-[#06B6D4]">68%</span>
           </p>
           <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
@@ -65,7 +65,7 @@ export function WhyuseSection() {
               <div className="flex gap-4 py-10 flex-col items-start">
                 <div className="max-w-6xl mx-auto text-center">
                   <p className="text-xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
-                       For Users — Cut time by{" "}
+                       For Users cut time by{" "}
                        <span className="text-[#06B6D4]">90%</span>
                   </p>
                   <p className="text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed tracking-tight text-gray-400">
