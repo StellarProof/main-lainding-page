@@ -242,7 +242,7 @@ function FeatureCard({ children, step }: { children: React.ReactNode; step: numb
       }
     >
       <div className="relative w-full overflow-hidden rounded-3xl border border-white/20 bg-[#171716] transition-colors duration-300">
-        <div className="m-10 min-h-[450px] w-full">
+        <div className="m-4 sm:m-8 md:m-10 min-h-[280px] sm:min-h-[380px] md:min-h-[450px] w-full">
           <AnimatePresence mode="wait">
             <motion.div
               key={step}

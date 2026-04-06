@@ -3,7 +3,7 @@ import { CardSpotlight } from "@/components/ui/card-spotlight";
 
 export function WhyuseSection() {
   return (
-    <section id="anchors" className="bg-transparent py-24 px-6">
+    <section id="anchors" className="bg-transparent py-12 sm:py-16 md:py-24 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <div className="max-w-6xl mx-auto">
@@ -11,13 +11,13 @@ export function WhyuseSection() {
               Why use <span className="text-white">Stellar</span>Proof?
             </p>
           </div>
-          <p className="text-1xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
-            For Anchor Cut KYC costs by{" "}
+          <p className="text-xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
+            For Anchor — Cut KYC costs by{" "}
             <span className="text-[#06B6D4]">68%</span>
           </p>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Stop paying for the same user twice. StellarProof reuses verified credentials <br />
-            Anchor only pay for new verifications.
+          <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
+            Stop paying for the same user twice. StellarProof reuses verified credentials.{" "}
+            Anchors only pay for new verifications.
           </p>
         </div>
 
@@ -64,13 +64,12 @@ export function WhyuseSection() {
       <div className="max-w-6xl mx-auto">
               <div className="flex gap-4 py-10 flex-col items-start">
                 <div className="max-w-6xl mx-auto text-center">
-                  <p className="text-1xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
-                       For Users Cut time by{" "}
+                  <p className="text-xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
+                       For Users — Cut time by{" "}
                        <span className="text-[#06B6D4]">90%</span>
                   </p>
-                  <p className="text-lg max-w-2xl mx-auto leading-relaxed tracking-tight text-gray-400">
-                    Verify once with any Stellar anchor. <br />
-                    reuse your credential across the ecosystem.
+                  <p className="text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed tracking-tight text-gray-400">
+                    Verify once with any Stellar anchor. Reuse your credential across the ecosystem.
                   </p>
                 </div>
 

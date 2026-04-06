@@ -106,7 +106,7 @@ const Step = ({
 const H1 = ({ children }: { children: React.ReactNode }) => (
   <h1
     style={{
-      fontSize: 32,
+      fontSize: "clamp(22px, 5vw, 32px)",
       fontWeight: 700,
       color: TEXT,
       margin: "0 0 8px",
@@ -120,7 +120,7 @@ const H1 = ({ children }: { children: React.ReactNode }) => (
 const H2 = ({ children }: { children: React.ReactNode }) => (
   <h2
     style={{
-      fontSize: 22,
+      fontSize: "clamp(16px, 3vw, 22px)",
       fontWeight: 700,
       color: TEXT,
       margin: "32px 0 12px",
@@ -177,8 +177,8 @@ const sections: Record<NavId, () => React.ReactElement> = {
         No uploading the same passport again. No waiting. No five different apps storing copies of your face.
       </P>
       <Callout type="info">
-        SDF wrote this goal into SEP-12 in 2018: <br/> <em>"Allow a customer to enter their KYC
-        information once and use it across many services without re-entering manually."</em>
+        SDF wrote this goal into SEP-12 in 2018: <br/> <em>&quot;Allow a customer to enter their KYC
+        information once and use it across many services without re-entering manually.&quot;</em>
         <br /><br />
         That was the plan. Nobody built the infrastructure. StellarProof is that infrastructure.
       </Callout>
@@ -191,8 +191,8 @@ const sections: Record<NavId, () => React.ReactElement> = {
         times, and each anchor pays $1-3 in verification costs three times.
       </P>
       <P>
-        60–80% of users abandon KYC before completing it, Not because they don't want
-        to use the product Because they've done it before and don't want to do it again.
+        60–80% of users abandon KYC before completing it, Not because they don&apos;t want
+        to use the product Because they&apos;ve done it before and don&apos;t want to do it again.
       </P>
       <Block>{`Without StellarProof:
   User → Coins.ph   → Upload passport, ID, selfie. Wait 2 days. ✓  ($1.35)
@@ -204,14 +204,14 @@ const sections: Record<NavId, () => React.ReactElement> = {
 
       <H2>Why Nobody Fixed It</H2>
       <P>
-        SumSub has "Reusable KYC" but it only works within their own network. If Anchor A uses 
+        SumSub has &quot;Reusable KYC&quot; but it only works within their own network. If Anchor A uses 
         SumSub and Anchor B uses Onfido, reuse breaks completely. The large KYC companies have 
         no incentive to fix this. Cross-provider reuse destroys their per-verification revenue.
       </P>
       <P>
         The problem was never technology. It was incentives. StellarProof earns only when credentials 
         are reused — so everything we build is designed to make reuse work as well as possible. Our 
-        interests and the ecosystem's are the same.
+        interests and the ecosystem&apos;s are the same.
       </P>
 
       <H2>The Solution</H2>
@@ -229,20 +229,20 @@ const sections: Record<NavId, () => React.ReactElement> = {
   Same person. One verification.
   Zero duplicate databases. Zero re-uploads.`}</Block>
       <Callout type="success">
-        The breach that can't leak what it doesn't have. StellarProof stores only
+        The breach that can&apos;t leak what it doesn&apos;t have. StellarProof stores only
         encrypted blobs. The server cannot decrypt them under any circumstance
         including legal compulsion.
       </Callout>
 
       <H2>Key Numbers</H2>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 16, margin: "16px 0" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 16, margin: "16px 0" }}>
         {[
           { val: "60–80%", label: "KYC drop-off rate across Stellar anchors" },
           { val: "$1-3", label: "Cost per first-time verification" },
           { val: "$0.10", label: "Cost per reuse — 93% cheaper" },
         ].map((s) => (
           <div key={s.val} style={{ background: DARK2, border: `1px solid ${BORDER}`, borderRadius: 10, padding: 20 }}>
-            <div style={{ fontSize: 28, fontWeight: 700, color: CYAN, fontFamily: "'Trebuchet MS'" }}>
+            <div style={{ fontSize: "clamp(20px, 5vw, 28px)", fontWeight: 700, color: CYAN, fontFamily: "'Trebuchet MS'" }}>
               {s.val}
             </div>
             <div style={{ fontSize: 13, color: MUTED, marginTop: 4 }}>{s.label}</div>
@@ -303,13 +303,6 @@ const sections: Record<NavId, () => React.ReactElement> = {
         Monitoring, Priority Integration Support, and a White-label SDK for wallets and
         fintechs building on Stellar.
       </P>
-      {/* <H2>Installation</H2>
-      <Block>{`npm install @stellarproof/sdk`}</Block>
-      <H2>Production Integration</H2>
-      <P>
-        Replace <Code>PUT /customer</Code> with <Code>GET /verify-proof</Code> for
-        cryptographic verification responses.
-      </P> */}
     </div>
   ),
 
@@ -324,17 +317,9 @@ const sections: Record<NavId, () => React.ReactElement> = {
       </P>
       <P>
         The registry stores nothing readable. Credentials are encrypted with the
-        user's Stellar keypair before they ever touch our database. A server breach
+        user&apos;s Stellar keypair before they ever touch our database. A server breach
         exposes only encrypted blobs. Even we cannot read them.
       </P>
-      {/* <H2>System Flow</H2>
-      <Block> <img src="/architecture.png" alt="StellarProof Architecture" 
-      style={{ 
-                width: "100%", 
-                borderRadius: 12, 
-                border: `1px solid ${BORDER}`,
-                margin: "16px 0"}} />
-      </Block> */}
     </div>
   ),
 
@@ -345,7 +330,7 @@ const sections: Record<NavId, () => React.ReactElement> = {
         StellarProof is designed so that a breach of our servers exposes nothing useful.
       </P>
       <P>
-        Credentials are encrypted with the user's own Stellar keypair before they touch
+        Credentials are encrypted with the user&apos;s own Stellar keypair before they touch
         our database. The server generates a one-time keypair per credential, encrypts
         the data, then permanently discards its own private key. What remains in our
         database is a blob that only the user can decrypt. Not us. Not a regulator with
@@ -353,7 +338,7 @@ const sections: Record<NavId, () => React.ReactElement> = {
       </P>
       <P>
         If a user loses their phone, recovery uses Shamir 2 of 3 secret sharing. The
-        master key is split into three shards: one on the user's device, one with a
+        master key is split into three shards: one on the user&apos;s device, one with a
         trusted contact, one in time-locked escrow with us. Any two shards reconstruct
         the key. No single shard reveals anything on its own. Losing a phone never means
         losing your identity.
@@ -458,7 +443,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         }}
       >
         <span style={{ color: TEXT, fontWeight: 600, fontSize: 15 }}>{q}</span>
-        <span style={{ color: CYAN, fontSize: 18, marginLeft: 16 }}>{open ? "-" : "+"}</span>
+        <span style={{ color: CYAN, fontSize: 18, marginLeft: 16, flexShrink: 0 }}>{open ? "-" : "+"}</span>
       </button>
       {open && (
         <p
@@ -479,7 +464,13 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 export default function AboutUsPage() {
   const [active, setActive] = useState<NavId>("what");
+  const [menuOpen, setMenuOpen] = useState(false);
   const activeIndex = nav.findIndex((n) => n.id === active);
+
+  const handleNavClick = (id: NavId) => {
+    setActive(id);
+    setMenuOpen(false);
+  };
 
   return (
     <div
@@ -492,7 +483,9 @@ export default function AboutUsPage() {
         position: "relative",
       }}
     >
+      {/* Status badge — hidden on small screens */}
       <div
+        className="hidden sm:block"
         style={{
           position: "fixed",
           bottom: 24,
@@ -513,7 +506,99 @@ export default function AboutUsPage() {
           Building on Stellar ecosystem
         </div>
       </div>
+
+      {/* ── MOBILE TOP BAR ── */}
       <div
+        className="md:hidden"
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: 50,
+          background: `${DARK}f0`,
+          backdropFilter: "blur(12px)",
+          borderBottom: `1px solid ${BORDER}`,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          padding: "12px 16px",
+        }}
+      >
+        <a href="/" aria-label="Go to homepage">
+          <img src="/stellarproof-logo.svg" alt="StellarProof" style={{ height: 32, width: "auto" }} />
+        </a>
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle navigation menu"
+          style={{
+            background: "none",
+            border: `1px solid ${BORDER}`,
+            borderRadius: 6,
+            padding: "6px 10px",
+            cursor: "pointer",
+            color: TEXT,
+            fontSize: 18,
+            lineHeight: 1,
+          }}
+        >
+          {menuOpen ? "✕" : "☰"}
+        </button>
+      </div>
+
+      {/* ── MOBILE DRAWER ── */}
+      {menuOpen && (
+        <div
+          className="md:hidden"
+          style={{
+            position: "fixed",
+            top: 57,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            zIndex: 40,
+            background: `${DARK}f8`,
+            backdropFilter: "blur(16px)",
+            overflowY: "auto",
+            padding: "8px 0 24px",
+            borderTop: `1px solid ${BORDER}`,
+          }}
+        >
+          {nav.map((n) => (
+            <button
+              key={n.id}
+              onClick={() => handleNavClick(n.id)}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 10,
+                width: "100%",
+                padding: "14px 20px",
+                background: active === n.id ? `${CYAN}18` : "none",
+                border: "none",
+                borderLeft: active === n.id ? `3px solid ${CYAN}` : "3px solid transparent",
+                cursor: "pointer",
+                textAlign: "left",
+                transition: "all 0.15s",
+              }}
+            >
+              <span
+                style={{
+                  fontSize: 15,
+                  color: active === n.id ? CYAN : MUTED,
+                  fontWeight: active === n.id ? 600 : 400,
+                }}
+              >
+                {n.label}
+              </span>
+            </button>
+          ))}
+        </div>
+      )}
+
+      {/* ── DESKTOP SIDEBAR ── */}
+      <div
+        className="hidden md:block"
         style={{
           width: 260,
           flexShrink: 0,
@@ -522,7 +607,7 @@ export default function AboutUsPage() {
           position: "sticky",
           top: 0,
           height: "100vh",
-          overflowY: "hidden",
+          overflowY: "auto",
         }}
       >
         <div
@@ -575,53 +660,73 @@ export default function AboutUsPage() {
         ))}
       </div>
 
-      <div style={{ flex: 1, padding: "48px 64px", maxWidth: 900, overflowY: "auto" }}>
-        {sections[active]()}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            marginTop: 48,
-            paddingTop: 24,
-            borderTop: `1px solid ${BORDER}`,
-          }}
-        >
-          {activeIndex > 0 ? (
-            <button
-              onClick={() => setActive(nav[activeIndex - 1].id)}
-              style={{
-                background: DARK2,
-                border: `1px solid ${BORDER}`,
-                borderRadius: 8,
-                padding: "10px 20px",
-                color: TEXT,
-                cursor: "pointer",
-                fontSize: 13,
-              }}
-            >
-              {`← ${nav[activeIndex - 1].label}`}
-            </button>
-          ) : (
-            <div />
-          )}
-          {activeIndex < nav.length - 1 ? (
-            <button
-              onClick={() => setActive(nav[activeIndex + 1].id)}
-              style={{
-                background: DARK2,
-                border: `1px solid ${BORDER}`,
-                borderRadius: 8,
-                padding: "10px 20px",
-                color: TEXT,
-                cursor: "pointer",
-                fontSize: 13,
-              }}
-            >
-              {`${nav[activeIndex + 1].label} →`}
-            </button>
-          ) : (
-            <div />
-          )}
+      {/* ── MAIN CONTENT ── */}
+      <div
+        style={{
+          flex: 1,
+          overflowY: "auto",
+          minWidth: 0,
+        }}
+      >
+        {/* Spacer for mobile sticky top bar */}
+        <div className="md:hidden" style={{ height: 57 }} />
+
+        <div style={{ padding: "clamp(20px, 5vw, 48px) clamp(16px, 5vw, 64px)", maxWidth: 900 }}>
+          {sections[active]()}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              marginTop: 48,
+              paddingTop: 24,
+              borderTop: `1px solid ${BORDER}`,
+              gap: 12,
+              flexWrap: "wrap",
+            }}
+          >
+            {activeIndex > 0 ? (
+              <button
+                onClick={() => setActive(nav[activeIndex - 1].id)}
+                style={{
+                  background: DARK2,
+                  border: `1px solid ${BORDER}`,
+                  borderRadius: 8,
+                  padding: "10px 16px",
+                  color: TEXT,
+                  cursor: "pointer",
+                  fontSize: 13,
+                  flex: "1 1 auto",
+                  minWidth: 0,
+                  textAlign: "left",
+                }}
+              >
+                {`← ${nav[activeIndex - 1].label}`}
+              </button>
+            ) : (
+              <div />
+            )}
+            {activeIndex < nav.length - 1 ? (
+              <button
+                onClick={() => setActive(nav[activeIndex + 1].id)}
+                style={{
+                  background: DARK2,
+                  border: `1px solid ${BORDER}`,
+                  borderRadius: 8,
+                  padding: "10px 16px",
+                  color: TEXT,
+                  cursor: "pointer",
+                  fontSize: 13,
+                  flex: "1 1 auto",
+                  minWidth: 0,
+                  textAlign: "right",
+                }}
+              >
+                {`${nav[activeIndex + 1].label} →`}
+              </button>
+            ) : (
+              <div />
+            )}
+          </div>
         </div>
       </div>
     </div>
