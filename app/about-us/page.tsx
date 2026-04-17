@@ -509,7 +509,7 @@ export default function AboutUsPage() {
 
       {/* ── MOBILE TOP BAR ── */}
       <div
-        className="md:hidden"
+        className="md:hidden flex items-center justify-between"
         style={{
           position: "fixed",
           top: 0,
@@ -519,7 +519,6 @@ export default function AboutUsPage() {
           background: `${DARK}f0`,
           backdropFilter: "blur(12px)",
           borderBottom: `1px solid ${BORDER}`,
-          display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
           padding: "12px 16px",
@@ -622,7 +621,7 @@ export default function AboutUsPage() {
               <img
                 src="/stellarproof-logo.svg"
                 alt="StellarProof"
-                className="w-30 h-auto"
+                className="w-32 h-auto"
               />
             </a>
           </div>
