@@ -4,7 +4,7 @@ import { FeatureCarousel } from "@/components/ui/animated-feature-carousel";
 const images = {
   alt: "Feature screenshot",
   step1img2:
-    "https://images.ctfassets.net/9gcg9b05der6/5wjeRQ2gingWVOueht2DCr/eda87b8df1882468cf7416f1bb5d40ce/Mobile_KYC__How_will_it_transform_compliance",
+    "https://placehold.co/1661x934/000000/000000",
   step2img1:
     "https://placehold.co/1661x934/000000/000000",
   step2img2:

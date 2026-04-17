@@ -192,7 +192,7 @@ const StepImage = forwardRef<HTMLImageElement, StepImageProps>(
         alt={alt}
         className={className}
         src={src}
-        style={{ position: "absolute", userSelect: "none", maxWidth: "unset", ...style }}
+        style={{ userSelect: "none", ...style }}
         onError={(e) => (e.currentTarget.src = placeholderImage(alt))}
         {...props}
       />
@@ -242,44 +242,60 @@ function FeatureCard({ children, step }: { children: React.ReactNode; step: numb
       }
     >
       <div className="relative w-full overflow-hidden rounded-3xl border border-white/20 bg-[#171716] transition-colors duration-300">
-        <div className="m-4 sm:m-8 md:m-10 min-h-[280px] sm:min-h-[380px] md:min-h-[450px] w-full">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={step}
-              className="flex w-full flex-col gap-4 md:w-3/5"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[400px] sm:min-h-[500px] md:min-h-[550px]">
+          {/* Left Column - Text */}
+          <div className="flex flex-col justify-center p-4 sm:p-8 md:p-10">
+            <AnimatePresence mode="wait">
               <motion.div
-                className="text-sm font-semibold uppercase tracking-wider text-sky-600 dark:text-sky-500"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.05, duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                key={step}
+                className="flex w-full flex-col gap-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
               >
-                {steps[step].name}
+                <motion.div
+                  className="text-sm font-semibold uppercase tracking-wider text-sky-600 dark:text-sky-500"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.05, duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  {steps[step].name}
+                </motion.div>
+                <motion.h2
+                  className="text-2xl font-bold tracking-tight text-white md:text-3xl"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1, duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  {steps[step].title}
+                </motion.h2>
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.15, duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <p className="text-base leading-relaxed text-[#A0A0A0]">
+                    {steps[step].description}
+                  </p>
+                </motion.div>
               </motion.div>
-              <motion.h2
-                className="text-2xl font-bold tracking-tight text-white md:text-3xl"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.1, duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              >
-                {steps[step].title}
-              </motion.h2>
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.15, duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              >
-                <p className="text-base leading-relaxed text-[#A0A0A0]">
-                  {steps[step].description}
-                </p>
-              </motion.div>
-            </motion.div>
-          </AnimatePresence>
-          {children}
+            </AnimatePresence>
+          </div>
+
+          {/* Right Column - Image (Full) */}
+          <div className="hidden lg:flex flex-col bg-[#171716] overflow-hidden">
+            <div className="w-full h-full">
+              {children}
+            </div>
+          </div>
+
+          {/* Mobile Image - Below Text */}
+          <div className="lg:hidden flex flex-col justify-center items-center bg-[#171716] min-h-[300px] sm:min-h-[350px]">
+            <div className="relative w-full h-full">
+              {children}
+            </div>
+          </div>
         </div>
       </div>
     </motion.div>
@@ -344,12 +360,12 @@ function StepsNav({
 }
 
 const defaultClasses = {
-  img: "rounded-xl border border-neutral-200 dark:border-neutral-800 shadow-2xl shadow-black/10 dark:shadow-neutral-950/50",
-  step1img2: "w-[60%] left-[30%] top-[15%]",
-  step2img1: "w-[50%] left-[10%] top-[40%]",
-  step2img2: "w-[60%] left-[30%] top-[15%]",
-  step3img: "w-[90%] left-[5%] top-[25%]",
-  step4img: "w-[90%] left-[5%] top-[25%]",
+  img: "w-full h-full object-cover rounded-none border-none",
+  step1img2: "w-full h-full object-cover",
+  step2img1: "w-full h-full object-cover",
+  step2img2: "w-full h-full object-cover",
+  step3img: "w-full h-full object-cover",
+  step4img: "w-full h-full object-cover",
 } as const;
 
 export function FeatureCarousel({
@@ -367,26 +383,22 @@ export function FeatureCarousel({
     switch (step) {
       case 0:
         return (
-          <div className="relative h-full w-full">
-            <AnimatedStepImage
-              alt={image.alt}
-              className={cn(defaultClasses.img, step1img2Class)}
-              src={image.step1img2}
-              preset="slideInRight"
-              delay={0.1}
-            />
-          </div>
+          <AnimatedStepImage
+            alt={image.alt}
+            className={cn(defaultClasses.img, step1img2Class)}
+            src={image.step1img2}
+            preset="slideInRight"
+            delay={0.1}
+          />
         );
       case 1:
         return (
-          <div className="relative h-full w-full">
-            <AnimatedStepImage
-              alt={image.alt}
-              className={cn(defaultClasses.img, step2img2Class)}
-              src={image.step2img2}
-              preset="fadeInScale"
-            />
-          </div>
+          <AnimatedStepImage
+            alt={image.alt}
+            className={cn(defaultClasses.img, step2img2Class)}
+            src={image.step2img2}
+            preset="fadeInScale"
+          />
         );
       case 2:
         return (
@@ -415,7 +427,11 @@ export function FeatureCarousel({
     <div className="mx-auto flex w-full max-w-4xl flex-col gap-12 p-4">
       <FeatureCard {...props} step={step}>
         <AnimatePresence mode="wait">
-          <motion.div key={step} {...ANIMATION_PRESETS.fadeInScale} className="absolute h-full w-full">
+          <motion.div 
+            key={step} 
+            {...ANIMATION_PRESETS.fadeInScale} 
+            className="flex items-center justify-center w-full h-full"
+          >
             {renderStepContent()}
           </motion.div>
         </AnimatePresence>
