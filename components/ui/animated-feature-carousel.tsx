@@ -81,19 +81,19 @@ const steps: readonly Step[] = [
     name: "Step 2",
     title: "Reusable Credential Created",
     description:
-      "User kyc data is transformed into a reusable credential, no more document uploads or duplicate checks.",
+      "User kyc data is transformed into a reusable credential, no more document uploads or duplicate copies across anchors.",
   },
   {
     id: "3",
     name: "Step 3",
-    title: "credential tied to your stellar wallet",
+    title: "Credential tied to your Stellar Wallet",
     description:
       "The credential is cryptographically linked to your Stellar wallet, ensuring secure and private reuse across the ecosystem.",
   },
   {
     id: "4",
     name: "Step 4",
-    title: "Reuse across stellar ecosystem",
+    title: "Reuse across Stellar Ecosystem",
     description:
       "Use the credential to verify at any other anchor without going through the whole KYC process again.",
   },
